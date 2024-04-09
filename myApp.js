@@ -7,6 +7,8 @@ let app = express();
 //     res.send("Hello Express");
 // });
 
+app.use("/public", express.static(__dirname + '/public'))
+
 app.get("/", (req, res) => {
     const absolutePath = __dirname + '/views/index.html';
     res.sendFile(absolutePath);
